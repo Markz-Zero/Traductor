@@ -16,7 +16,7 @@ from googletrans import Translator
 
 
 st.title("TRADUCTOR.")
-st.subheader("Escucho lo que quieres traducir.")
+st.subheader("Voz a Texto")
 
 
 image = Image.open('OIG7.jpg')
@@ -31,7 +31,7 @@ with st.sidebar:
 
 st.write("Toca el Botón y habla lo que quires traducir")
 
-stt_button = Button(label=" Escuchar  🎤", width=300,  height=50)
+stt_button = Button(label=" Hablar  🎤", width=300,  height=50)
 
 stt_button.js_on_event("button_click", CustomJS(code="""
     var recognition = new webkitSpeechRecognition();
@@ -79,37 +79,37 @@ if result:
     text = str(result.get("GET_TEXT"))
     in_lang = st.selectbox(
         "Selecciona el lenguaje de Entrada",
-        ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
+        ("Inglés", "Español", "Turco", "Finlandés", "Árabe", "Griego"),
     )
     if in_lang == "Inglés":
         input_language = "en"
     elif in_lang == "Español":
         input_language = "es"
-    elif in_lang == "Bengali":
-        input_language = "bn"
-    elif in_lang == "Coreano":
-        input_language = "ko"
-    elif in_lang == "Mandarín":
-        input_language = "zh-cn"
-    elif in_lang == "Japonés":
-        input_language = "ja"
+    elif in_lang == "Turco":
+        input_language = "tr"
+    elif in_lang == "Finlandés":
+        input_language = "fi"
+    elif in_lang == "Árabe":
+        input_language = "ar"
+    elif in_lang == "Griego":
+        input_language = "el"
     
     out_lang = st.selectbox(
         "Selecciona el lenguaje de salida",
-        ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
+        ("Inglés", "Español", "Turco", "Finlandés", "Árabe", "Griego"),
     )
     if out_lang == "Inglés":
         output_language = "en"
     elif out_lang == "Español":
         output_language = "es"
-    elif out_lang == "Bengali":
-        output_language = "bn"
-    elif out_lang == "Coreano":
-        output_language = "ko"
-    elif out_lang == "Mandarín":
-        output_language = "zh-cn"
-    elif out_lang == "Japonés":
-        output_language = "ja"
+    elif out_lang == "Turco":
+        output_language = "tr"
+    elif out_lang == "Finlandés":
+        output_language = "fi"
+    elif out_lang == "Árabe":
+        output_language = "ar"
+    elif out_lang == "Griego":
+        output_language = "el"
     
     english_accent = st.selectbox(
         "Selecciona el acento",
